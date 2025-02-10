@@ -1,0 +1,2 @@
+# -Pr-diction-de-risques-pour-la-baisse-d-un-chiffre-d-affaires-en-utilisant-un-r-seau-bay-sien
+Ce projet utilise les réseaux bayésiens pour prédire la probabilité d’une baisse du chiffre d’affaires en fonction de divers facteurs économiques et opérationnels. Grâce à la modélisation probabiliste, il identifie les causes majeures influençant la stabilité financière et anticipe les risques liés à la baisse du CA
