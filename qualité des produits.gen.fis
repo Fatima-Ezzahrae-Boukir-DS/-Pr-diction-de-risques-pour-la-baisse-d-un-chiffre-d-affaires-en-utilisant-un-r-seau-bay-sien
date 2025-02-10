@@ -1,0 +1,35 @@
+[System]
+Name='Qualité des produits.gen'
+Ninputs=1
+Noutputs=1
+Nrules=3
+Nexceptions=0
+Conjunction='prod'
+MissingValues='random'
+
+[Input1]
+Active='yes'
+Name='Budget Global'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='Bas','gaussian',[       0.100 ,       0.200 ]
+MF2='Modéré','gaussian',[       0.100 ,       0.400 ]
+MF3='Considérable','gaussian',[       0.100 ,       0.700 ]
+
+[Output1]
+Nature='crisp'
+Defuzzification='sugeno'
+Disjunction='max'
+DefaultValue=      -1.000 
+Classif='no' 
+Active='yes'
+Name='Qualité des produits'
+Range=[       0.000 ,       1.000 ]
+NMFs=0
+
+[Rules]
+1,        0.200 ,
+2,        0.400 ,
+3,        0.700 ,
+
+[Exceptions]

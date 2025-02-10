@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProbModelXML formatVersion="0.2.0">
+  <ProbNet type="BayesianNetwork">
+    <Comment showWhenOpeningNetwork="false"><![CDATA[<<Double click to add/modify comment>>]]></Comment>
+    <DecisionCriteria>
+      <Criterion name="---" unit="---" />
+    </DecisionCriteria>
+    <Variables>
+      <Variable name="Baisse de chiffre d'affaires " type="finiteStates" role="chance">
+        <Coordinates x="617" y="532" />
+        <States>
+          <State name="Significative" />
+          <State name="Modérée" />
+          <State name="Légère" />
+        </States>
+      </Variable>
+      <Variable name="Capacité de production " type="finiteStates" role="chance">
+        <Coordinates x="327" y="393" />
+        <States>
+          <State name="Bonne" />
+          <State name="Moyenne" />
+          <State name="Mauvaise" />
+        </States>
+      </Variable>
+      <Variable name="Qualité des produits " type="finiteStates" role="chance">
+        <Coordinates x="769" y="257" />
+        <States>
+          <State name="Premium" />
+          <State name="Supérieure" />
+          <State name="Standard" />
+        </States>
+      </Variable>
+      <Variable name="Évolutions technologiques" type="finiteStates" role="chance">
+        <Coordinates x="440" y="261" />
+        <States>
+          <State name="Rapide" />
+          <State name="Moyenne" />
+          <State name="Lente" />
+        </States>
+      </Variable>
+      <Variable name="Budget Global" type="finiteStates" role="chance">
+        <Coordinates x="540" y="50" />
+        <States>
+          <State name="Considérable" />
+          <State name="Modéré" />
+          <State name="Bas" />
+        </States>
+      </Variable>
+      <Variable name="Stratégie marketing" type="finiteStates" role="chance">
+        <Coordinates x="1001" y="258" />
+        <States>
+          <State name="Innovante" />
+          <State name="Moderne" />
+          <State name="Traditionnelle" />
+        </States>
+      </Variable>
+      <Variable name="Satisfaction des clients " type="finiteStates" role="chance">
+        <Coordinates x="873" y="372" />
+        <States>
+          <State name="Élevée" />
+          <State name="Moyenne " />
+          <State name="Faible " />
+        </States>
+      </Variable>
+      <Variable name="Disponibilité des matières premières" type="finiteStates" role="chance">
+        <Coordinates x="164" y="263" />
+        <States>
+          <State name="Abondante" />
+          <State name="Satisfaisante" />
+          <State name="Limitée" />
+        </States>
+      </Variable>
+    </Variables>
+    <Links>
+      <Link directed="true">
+        <Variable name="Capacité de production " />
+        <Variable name="Baisse de chiffre d'affaires " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Qualité des produits " />
+        <Variable name="Satisfaction des clients " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Évolutions technologiques" />
+        <Variable name="Capacité de production " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Budget Global" />
+        <Variable name="Disponibilité des matières premières" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Budget Global" />
+        <Variable name="Évolutions technologiques" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Budget Global" />
+        <Variable name="Qualité des produits " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Budget Global" />
+        <Variable name="Stratégie marketing" />
+      </Link>
+      <Link directed="true">
+        <Variable name="Stratégie marketing" />
+        <Variable name="Satisfaction des clients " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Satisfaction des clients " />
+        <Variable name="Baisse de chiffre d'affaires " />
+      </Link>
+      <Link directed="true">
+        <Variable name="Disponibilité des matières premières" />
+        <Variable name="Capacité de production " />
+      </Link>
+    </Links>
+    <Potentials>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Baisse de chiffre d'affaires " />
+          <Variable name="Capacité de production " />
+          <Variable name="Satisfaction des clients " />
+        </Variables>
+        <Values>0.002 0.499 0.499 0.035 0.705 0.26 0.73 0.269 0.001 0.003 0.99 0.007 0.046 0.947 0.007 0.99 0.007 0.003 0.004 0.993 0.003 0.047 0.95 0.003 0.994 0.003 0.003</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Capacité de production " />
+          <Variable name="Évolutions technologiques" />
+          <Variable name="Disponibilité des matières premières" />
+        </Variables>
+        <Values>0.001 0.048 0.951 0.009 0.18 0.811 0.048 0.95 0.002 0.001 0.73 0.269 0.14 0.629 0.231 0.73 0.269 0.001 0.001 0.998 0.001 0.182 0.817 0.001 0.996 0.002 0.002</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Qualité des produits " />
+          <Variable name="Budget Global" />
+        </Variables>
+        <Values>0.001 0.499 0.5 0.499 0.498 0.003 0.997 0.002 0.001</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Évolutions technologiques" />
+          <Variable name="Budget Global" />
+        </Variables>
+        <Values>0.002 0.047 0.951 0.046 0.909 0.045 0.997 0.002 0.001</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Budget Global" />
+        </Variables>
+        <Values>0.65 0.3 0.05</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Stratégie marketing" />
+          <Variable name="Budget Global" />
+        </Variables>
+        <Values>0.001 0.269 0.73 0.179 0.806 0.015 0.994 0.003 0.003</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Satisfaction des clients " />
+          <Variable name="Stratégie marketing" />
+          <Variable name="Qualité des produits " />
+        </Variables>
+        <Values>0.001 0.269 0.73 0.154 0.423 0.423 0.269 0.73 0.001 0.002 0.951 0.047 0.488 0.488 0.024 0.95 0.048 0.002 0.001 0.96 0.039 0.499 0.499 0.002 0.978 0.02 0.002</Values>
+      </Potential>
+      <Potential type="Table" role="conditionalProbability">
+        <Variables>
+          <Variable name="Disponibilité des matières premières" />
+          <Variable name="Budget Global" />
+        </Variables>
+        <Values>0.002 0.047 0.951 0.499 0.498 0.003 0.996 0.002 0.002</Values>
+      </Potential>
+    </Potentials>
+  </ProbNet>
+  <InferenceOptions>
+    <MulticriteriaOptions>
+      <SelectedAnalysisType>UNICRITERION</SelectedAnalysisType>
+      <Unicriterion>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+      </Unicriterion>
+      <CostEffectiveness>
+        <Scales>
+          <Scale Criterion="---" Value="1.0" />
+        </Scales>
+        <CE_Criteria>
+          <CE_Criterion Criterion="---" Value="Cost" />
+        </CE_Criteria>
+      </CostEffectiveness>
+    </MulticriteriaOptions>
+  </InferenceOptions>
+</ProbModelXML>
